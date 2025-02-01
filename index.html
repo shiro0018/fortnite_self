@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>FORTNITE 自己紹介カード作成</title>
+
+  <!-- スマホ対応のviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+1p&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+  <!-- 共通スタイル -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+  <img src="images/logo/logo.png" alt="" width="60%" style="display: block; margin: auto;" />
+  <h1>自己紹介カード作成</h1>
+
+  <!-- フォーム: GETでcard.htmlに送信 -->
+  <form id="cardForm" action="card.html" method="GET">
+    <!-- 1) 名前 -->
+    <div class="form-group">
+      <label for="inputUserName">名前</label>
+      <input type="text" id="inputUserName" name="userName"  />
+    </div>
+
+    <!-- 2) EPIC ID -->
+    <div class="form-group">
+      <label for="inputEpicId">EPIC ID</label>
+      <input type="text" id="inputEpicId" name="epicId"  />
+    </div>
+
+    <!-- 3) 性別 -->
+    <div class="form-group">
+      <label>性別</label>
+      <div class="radio-group">
+        <label><input type="radio" name="gender" value="male" checked>男性</label>
+        <label><input type="radio" name="gender" value="female">女性</label>
+        <label><input type="radio" name="gender" value="other">その他</label>
+      </div>
+    </div>
+
+    <!-- 4) コメント（100文字以内） -->
+    <div class="form-group">
+      <label for="inputComment">コメント（100文字以内）</label>
+      <textarea id="inputComment" name="comment" maxlength="100" rows="3">
+      </textarea>
+    </div>
+
+    <!-- 5) 好きな武器 -->
+    <div class="form-group">
+      <label for="inputWeapon">好きな武器</label>
+      <input type="text" id="inputWeapon" name="weapon"  />
+    </div>
+
+    <!-- 6) プレイする時間帯 -->
+    <div class="form-group">
+      <label for="inputPlayTime">プレイ時間帯</label>
+      <input type="text" id="inputPlayTime" name="playTime"  />
+    </div>
+
+    <!-- 7) ボイスチャット可否 -->
+    <div class="form-group">
+      <label>ボイチャ</label>
+      <div class="radio-group">
+        <label><input type="radio" name="voiceChat" value="OK" checked>OK</label>
+        <label><input type="radio" name="voiceChat" value="NG">NG</label>
+        <label><input type="radio" name="voiceChat" value="時間帯によってOK">時間帯によってOK</label>
+      </div>
+    </div>
+
+    <!-- 8) プレイするゲーム（建築 or ゼロビルド） -->
+    <div class="form-group">
+      <label>プレイするゲーム</label>
+      <div class="radio-group">
+        <label><input type="radio" name="buildMode" value="建築" checked>建築</label>
+        <label><input type="radio" name="buildMode" value="ゼロビルド">ゼロビルド</label>
+      </div>
+    </div>
+
+    <!-- 9) 利用しているデバイス -->
+    <div class="form-group">
+      <label>利用デバイス</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="devices" value="XBOX">XBOX</label>
+        <label><input type="checkbox" name="devices" value="PS">PS</label>
+        <label><input type="checkbox" name="devices" value="SWITCH">SWITCH</label>
+        <label><input type="checkbox" name="devices" value="PC">PC</label>
+        <label><input type="checkbox" name="devices" value="Smart Phone">Smart Phone</label>
+      </div>
+    </div>
+
+    <!-- 10) 背景テンプレート (JPEG) -->
+    <div class="form-group">
+      <label for="inputTemplate">背景テンプレート</label>
+      <select id="inputTemplate" name="templateName">
+        <option value="ピンク.jpg" selected>ピンク</option>
+        <option value="イエロー.jpg">イエロー</option>
+        <option value="ブルー.jpg">ブルー</option>
+        <option value="グリーン.jpg">グリーン</option>
+        <option value="ブラック.jpg">ブラック</option>
+      </select>
+    </div>
+
+    <!-- 11) キャラクター画像 (PNG) -->
+    <div class="form-group">
+      <label for="inputCharacter">キャラクター画像</label>
+      <select id="inputCharacter" name="characterName">
+        <option value="chara1.png" selected>キャラ1</option>
+        <option value="chara2.png">キャラ2</option>
+        <option value="chara3.png">キャラ3</option>
+        <option value="chara4.png">キャラ4</option>
+        <option value="chara5.png">キャラ5</option>
+      </select>
+    </div>
+
+    <!-- 12) 楽しみたい(0) ～ ビクロイ(10) -->
+    <div class="form-group">
+      <label for="inputEnjoyVsVictory">楽しみたい ～ ビクロイ</label>
+      <input type="range" id="inputEnjoyVsVictory" name="enjoyVsVictory" min="0" max="10" value="5" step="1" />
+      <div class="range-value">現在の値: <span id="enjoyValueSpan">5</span></div>
+    </div>
+
+    <!-- 13) 初心者(0) ～ 上級者(10) -->
+    <div class="form-group">
+      <label for="inputBeginnerVsAdvanced">初心者 ～ 上級者</label>
+      <input type="range" id="inputBeginnerVsAdvanced" name="beginnerVsAdvanced" min="0" max="10" value="5" step="1" />
+      <div class="range-value">現在の値: <span id="beginnerValueSpan">5</span></div>
+    </div>
+
+    <!-- 送信ボタン -->
+    <div class="buttons">
+      <button type="submit" id="createCardBtn">自己紹介カードを作成する</button>
+    </div>   
+  </form>   
+
+   <!-- ここからサンプル画像表示エリア -->
+   <div class="sample-images">
+    <div class="character-sample">
+      <h3>キャラ1</h3>
+      <img src="images/chara/chara1.png" alt="キャラ1">
+    </div>
+    <div class="character-sample">
+      <h3>キャラ2</h3>
+      <img src="images/chara/chara2.png" alt="キャラ2">
+    </div>
+    <div class="character-sample">
+      <h3>キャラ3</h3>
+      <img src="images/chara/chara3.png" alt="キャラ3">
+    </div>
+    <div class="character-sample">
+      <h3>キャラ4</h3>
+      <img src="images/chara/chara4.png" alt="キャラ4">
+    </div>
+    <div class="character-sample">
+      <h3>キャラ5</h3>
+      <img src="images/chara/chara5.png" alt="キャラ5">
+    </div>
+  </div>
+  <!-- サンプル画像表示エリアここまで -->
+
+    <div class="menseki">
+      <p>使用されている素材の一部は、Epic Games, Inc. の商標ならびに著作物です。Epicは無断転用を禁じます。本素材はEpicの公式素材ではなく、Epicにより承認されていません。</p>
+    </div>
+
+ 
+</div>  
+</div>
+
+<script>
+// range の値をリアルタイム表示（お好みで）
+const enjoyRange = document.getElementById('inputEnjoyVsVictory');
+const enjoySpan  = document.getElementById('enjoyValueSpan');
+enjoyRange.addEventListener('input', () => {
+  enjoySpan.textContent = enjoyRange.value;
+});
+
+const beginnerRange = document.getElementById('inputBeginnerVsAdvanced');
+const beginnerSpan  = document.getElementById('beginnerValueSpan');
+beginnerRange.addEventListener('input', () => {
+  beginnerSpan.textContent = beginnerRange.value;
+});
+</script>
+
+</body>
+</html>

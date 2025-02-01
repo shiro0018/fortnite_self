@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>自己紹介カード</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts & CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+1p&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>自己紹介カード</h1>
+
+  <div class="card-wrapper">
+    <div id="cardContainer">
+      <!-- 左側：ユーザ情報 -->
+      <div class="info-area">
+        <h1>
+          <span id="userName"></span>
+          <span id="genderIcon" class="gender-icon"></span><br>
+          <span id="epicIdText"></span>          
+        </h1>
+
+        <div id="userComment" class="user-comment"></div>
+
+        <div class="info-item">
+          <span>好きな武器：</span>
+          <span id="weapon"></span>
+        </div>
+        <div class="info-item">
+          <span>時間帯：</span>
+          <span id="playTime"></span>
+        </div>
+        <div class="info-item">
+          <span>ボイチャ：</span>
+          <span id="voiceChat"></span>
+        </div>
+        <div class="info-item">
+          <span>ビルド：</span>
+          <span id="buildMode"></span>
+        </div>
+
+        <!-- デバイス (横並び) -->
+        <div class="info-item" style="display: flex; align-items: center; gap: 4px;">
+          <span>デバイス：</span>
+          <div class="devices" id="deviceList"></div>
+        </div>
+
+        <!-- 2本のバー: 楽しみたい-ビクロイ優先, 初心者-上級者 -->
+        <div class="bars-area">
+          <!-- 1) 楽しみたい-ビクロイ -->
+          <div class="bar-container">
+            <div class="bar-labels">
+              <div>楽しみたい</div>
+              <div>ビクロイ優先</div>
+            </div>
+            <div class="bar-line">
+              <div class="bar-dot" id="funDot"></div>
+            </div>
+          </div>
+
+          <!-- 2) 初心者-上級者 -->
+          <div class="bar-container">
+            <div class="bar-labels">
+              <div>初心者</div>
+              <div>上級者</div>
+            </div>
+            <div class="bar-line">
+              <div class="bar-dot" id="skillDot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- キャラクター画像 (背面) -->
+      <img id="characterImage" class="character-image" src="" alt="キャラクター">
+    </div>
+  </div>
+
+  <!-- ダウンロードボタン -->
+  <div class="buttons">
+    <button type="button" id="downloadBtn">JPEGダウンロード</button>
+  </div>
+</div>
+
+<!-- html2canvas -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<!-- カード生成スクリプト (JS) -->
+<script src="js/card.js"></script>
+</body>
+</html>
