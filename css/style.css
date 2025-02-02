@@ -122,7 +122,7 @@ body {
     position: absolute;
     top: 40px;
     left: 20px;
-    width: 220px;    
+    width: 250px;    
     color: #ffffff;/* 画像の文字色 */
     /*text-shadow: 1px 1px 2px rgba(0,0,0,0.7); */
     z-index: 2; /* 背面のキャラより上 */
@@ -143,14 +143,14 @@ body {
   
   #epicIdText {
     margin-left: 6px;
-    font-size: 0.9rem;
+    font-size: 0.6rem;
     opacity: 0.9;
   }
   
   .user-comment {
     margin: 10px 0;
     line-height: 1.3;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     background: rgba(0,0,0,0.3);
     padding: 6px 10px;
     border-radius: 6px;
@@ -159,8 +159,8 @@ body {
   }
   
   .info-item {
-    margin: 6px 0;
-    font-size: 0.9rem;
+    margin: 3px 0;
+    font-size: 0.7rem;
   }
   
   .info-item span {
@@ -178,7 +178,7 @@ body {
     border: 2px solid #fff;
     padding: 2px 4px;
     border-radius: 4px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
      /*text-shadow: 1px 1px 2px rgba(0,0,0,0.7);*/
   }
   
@@ -201,7 +201,7 @@ body {
   .bar-labels {
     display: flex;
     justify-content: space-between; /* 左右に均等配置 */
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight:bold;
     margin-bottom: 4px;
   }
