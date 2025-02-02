@@ -138,7 +138,7 @@ function setBarPositions(enjoyVal, skillVal) {
  */
 function downloadCard() {
   const cardElement = document.getElementById('cardContainer');
-  html2canvas(cardElement, {scale:1}).then(canvas => {
+  html2canvas(cardElement, {scale:2}).then(canvas => {
     const dataUrl = canvas.toDataURL('image/jpeg', 0.9);
     const link = document.createElement('a');
     link.download = 'my_card.jpg';
